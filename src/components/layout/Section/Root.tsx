@@ -1,0 +1,30 @@
+import { MergeProps } from '@/types/MergeProps';
+import { cn } from '@/utils/cn';
+
+import { SlotElement, SlotElementProps } from '@/components/misc/Slot/Element';
+import { SectionAnim, SectionAnimProps } from './Anim';
+
+export type SectionProps = MergeProps<
+  Pick<SectionAnimProps, 'theme' | 'forceTheme'>,
+  SlotElementProps<'section'>
+>;
+
+export const Section = ({ theme, forceTheme, className, ...props }: SectionProps) => {
+  return (
+    <SectionAnim
+      theme={theme}
+      forceTheme={forceTheme}
+    >
+      <SlotElement
+        tag='section'
+        data-theme={theme}
+        className={cn(
+          'relative isolate flex w-9/10 flex-col items-center justify-center py-(--py) text-body-emphasis [--py:clamp(--spacing(24),4.5vw+2rem,--spacing(32))]',
+          'before:absolute before:inset-y-0 before:left-1/2 before:-z-50 before:w-[200dvw] before:-translate-x-1/2 before:bg-body',
+          className
+        )}
+        {...props}
+      />
+    </SectionAnim>
+  );
+};

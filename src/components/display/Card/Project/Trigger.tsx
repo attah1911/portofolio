@@ -1,0 +1,24 @@
+import { ButtonLink, ButtonLinkProps } from '@/components/navigation/Link/Button';
+import { PiPlusBold } from 'react-icons/pi';
+import { cn } from '@/utils/cn';
+import { useIntlayer } from 'next-intlayer/server';
+
+export type ProjectCardTriggerProps = ButtonLinkProps;
+
+export const ProjectCardTrigger = ({ className, ...props }: ProjectCardTriggerProps) => {
+  const t = useIntlayer('project-card');
+
+  return (
+    <ButtonLink
+      iconOnly
+      aria-label={t.open.value}
+      className={cn(
+        'ml-auto h-auto shrink-0 rounded-none border-l-border p-4 text-2xl transition-none md:p-8 engaged:text-primary',
+        className
+      )}
+      {...props}
+    >
+      <PiPlusBold className='transition-[rotate] duration-700 ease-in-out group-engaged/button:rotate-360' />
+    </ButtonLink>
+  );
+};
