@@ -9,20 +9,18 @@ export default {
       title: t({
         en: (
           <h1>
-            <span className='sm:mr-auto'>Beyond tech</span>{' '}
+            <span className='sm:mr-auto'>Inspired By <em>ideas.</em></span>{' '}
             <span className='sm:ml-auto'>
-              algorithms <em>&</em>
+              Driven by <em>code.</em>
             </span>{' '}
-            <span className='sm:mr-auto'>results</span>
           </h1>
         ),
         id: (
           <h1>
-            <span className='sm:mr-auto'>Lebih dari tech</span>{' '}
+            <span className='sm:mr-auto'>Terinspirasi oleh <em>ide.</em></span>{' '}
             <span className='sm:ml-auto'>
-              algoritma <em>&</em>
+              Digerakkan oleh <em>kode.</em>
             </span>{' '}
-            <span className='sm:mr-auto'>hasil</span>
           </h1>
         )
       }),
