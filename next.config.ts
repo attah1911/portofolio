@@ -1,7 +1,9 @@
 import { withIntlayer } from 'next-intlayer/server';
 import { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  allowedDevOrigins: ['192.168.0.104'],
+};
 
 /**
  * Workaround for an intlayer 9.3.x bug.
